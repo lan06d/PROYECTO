@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8">
+
+<title>Inicio</title>
+<link rel="icon" href="images/logor.png">
+
+<link rel="stylesheet" href="css/inicio.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+
+</head>
+<body>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li class="active">
+          <a href="inicio.php">
+            <i class='bx bxs-objects-horizontal-left' ></i>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="cliente.php">
+            <i class="bx bxs-user"></i>
+            <span>Ciente</span>
+          </a>
+        </li>
+        <li>
+          <a href="mascota.php">
+            <i class='bx bxs-dog'></i>
+            <span>Mscota</span>
+          </a>
+        </li>
+        <li >
+          <a href="cita.php">
+            <i class='bx bxs-comment-dots'></i>
+            <span>Citas</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="index.php">
+            <i class="bx bxs-log-out"></i>
+            <span>Cerrar sesion</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    
+    <section class="main">
+    
+        <div class="container-table">
+        <div class="table__title"  >Datos servicio</div>
+        <div class="table__header">ID_servicio</div>
+        <div class="table__header">Tipo</div>
+        <div class="table__header">Estado</div>
+        </div>
+        <div class="container-table">
+          <div class="table__title">Datos servicio</div>
+          <div class="table__header">ID_servicio</div>
+          <div class="table__header">Tipo</div>
+          <div class="table__header">Estado</div>
+        <table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>ID</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="usuario : ${usuarios}">
+					<td th:text="${usuario.id}">ID</td>
+					<td th:text="${usuario.nombre}" class="table__header">ID</td>
+					<td th:text="${usuario.apellido}" class="" >ID</td>
+					<td th:text="${usuario.email}" class="table__header">ID</td>
+				</tr>
+			</tbody>
+		</table>
+        </div>
+    
+    </section>
+    
+
+    
+</body>
+<body>
+	
+
+
+
+	
+
+		
+	
+
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    
+    <link rel="icon" href="images/logor.png">
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Formulario</h2>
+            <form action="login.html">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+
+                    
+                     <input
+                        id="nombre" type="text" class="form-control" th:field="*{nombre}"
+                        required autofocus="autofocus">
+                        <label class="control-label" for="nombre">Nombre : </label>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required name="nombres" id="nombres">
+                    <label for="">Nombres</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" required name="apellidos" id="apellidos">
+                    <label for="">Apellidos</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="call"></ion-icon></span>
+                    <input type="number" required name="telefono" id="telefono">
+                    <label for="">Teléfono</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="crop"></ion-icon></span>
+                    <input type="number" required name="documento" id="documento">
+                    <label for="">Documento</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-unread"></ion-icon></span>
+                    <input type="email" required name="gmail" id="gmail">
+                    <label for="">Correo</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required name="contraseña" id="contraseña">
+                    <label for="">contraseña</label>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label><input type="checkbox">
+                     Recordarme</label>
+                    
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register"><br>
+                    <p><a href="login.html" 
+                        class="register-link">Iniciar sesion</a></p>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" ></script>
+    
+
+    
+
+</body>
+</html>

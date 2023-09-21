@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/registro.css">
+<title>Registro de usuarios</title>
+<!-- Latest compiled and minified CSS -->
+
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			
+		</div>
+	</nav>
+
+	<br>
+	<br>
+
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div th:if=${param.exito}>
+					<div class="alert alert-info">Se ha registrado exitosamente a
+						la aplicación</div>
+				</div>
+
+				<h1 class="lops">Regístrate</h1>
+				<form th:action="@{/registro}" method="post" th:object="${usuario}">
+					<div class="input-box">
+						
+                         <input
+							id="nombre" type="text"  th:field="*{nombre}"
+							required autofocus="autofocus"><label class="control-label" for="nombre">Nombre : </label>
+					</div>
+
+					<div class="input-box">
+						
+						<input
+							id="apellido" class="form-control" th:field="*{apellido}"
+							required autofocus="autofocus">
+						<label class="control-label" for="apellido">Apellido : </label> 	
+					</div>
+
+					<div class="input-box">
+						<input
+							id="email" type="email" class="form-control" th:field="*{email}"
+							required autofocus="autofocus">
+						<label class="control-label" for="email">Email : </label> 
+							
+					</div>
+
+					<div class="input-box">
+						
+						<input
+							type="password" id="password" class="form-control" th:field="*{password}"
+							required autofocus="autofocus">
+						<label class="control-label" for="password">Password : </label>  	
+					</div>
+					
+
+					<div class="form-group">
+						    <br>
+
+						<button type="submit" class="btn btn-success"> Registrar</button><br><br>
+						<span>Si estas registrado <a th:href="@{/login}">inicia sesión aqui</a></span>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

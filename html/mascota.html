@@ -1,0 +1,90 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="images/logor.png">
+
+    <link rel="stylesheet" href="css/mascota.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body>
+    <div class="sidebar">
+      <div class="logo"></div>
+      <ul class="menu">
+        <li >
+          <a href="inicio.html">
+            <i class='bx bxs-objects-horizontal-left' ></i>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li>
+          <a href="cliente.html">
+            <i class="bx bxs-user"></i>
+            <span>Ciente</span>
+          </a>
+        </li>
+        <li class="active" >
+          <a href="mascota.html">
+            <i class='bx bxs-dog'></i>
+            <span>Mscota</span>
+          </a>
+        </li>
+        <li  >
+          <a href="cita.html">
+            <i class='bx bxs-comment-dots'></i>
+            <span>Citas</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="index.html">
+            <i class="bx bxs-log-out"></i>
+            <span>Cerrar sesion</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="main">
+        <div class="form-register">
+            <h4>mascota</h4>
+            <form action="insertarestadoservicio.php" method="post">
+            <form action="tabla.php" method="post">
+              <label>Digite el ID del cliente</label><br><br>
+                <input class="controls" type="text" placeholder="ID cliente" name="idcliente" required>
+                <label for="estado">Estado:</label>
+                <input class="controls" type="text" placeholder="Estado" id="estado" name="estado" required><br>
+
+                <label for="raza">Raza:</label>
+                <input class="controls" type="text" placeholder="Raza" id="raza" name="raza" required><br>
+
+                <label for="edad">Edad:</label>
+                <input class="controls" type="text" placeholder="Edad" id="edad" name="edad"><br>
+
+                <label for="observacion">Observación:</label>
+                <textarea class="controls" id="observacion" placeholder="Observación" name="observacion"></textarea><br>
+
+                
+                <input class="botons" type="submit" name="registrar" value="Enviar">
+            </form>
+
+            </form>
+        </div>
+        <div class="container-table">
+        <div class="table__title">Datos servicio</div>
+        <div class="table__header">ID_servicio</div>
+        <div class="table__header">Tipo</div>
+        <div class="table__header">Estado</div>
+
+
+      
+    </div>
+    </section>
+    
+
+    
+</body>
+</html>

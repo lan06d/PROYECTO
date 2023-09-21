@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuarios</title>
+    
+    <link rel="icon" href="images/logor.png">
+    
+    <Style>
+        
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/unod.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+.navegacion a {
+    position: relative;
+    font-size: 1.1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+
+}
+
+.navegacion a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transform: transform .10s;
+
+
+}
+
+.navegacion a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+
+}
+.wrapper {
+    position: relative;
+    width: 440px;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(13, 9, 9, 0.5);
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin: 20vh auto; /* Centra verticalmente y agrega margen superior */
+}
+
+
+.wrapper .form-box {
+    width:100%;
+    padding: 40px;
+}
+.form-box h2 {
+    font-size: 2em;
+    color: #162938;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translate(-30px);
+    font-size: 1em;
+    color: #edeff1;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0 35px o 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.3em;
+    color: #162938;
+    line-height: 57px;
+
+}
+.remember-forgot{
+    font-size: .9em;
+    color: #162938;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    -ms-accelerator: #162938;
+    margin-right: 3px;
+}
+.remember-forgot a {
+    color: #162938;
+    text-decoration: none;
+
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: #162938;
+    text-align: center;
+    font-weight: 500;
+    margin: 25 0 10;
+
+}
+
+.login-register p a {
+    color: #162938;
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+    </Style>
+</head>
+
+
+<body>
+    
+    <div class="wrapper">
+        <div class="form-box login">
+            <h2>Formulario</h2>
+            <form action="login.html">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                     <input
+                        id="nombre" type="text" class="form-control" th:field="*{nombre}"
+                        required autofocus="autofocus">
+                        <label class="control-label" for="nombre">Nombre : </label>
+                </div>
+                <div class="input-box">
+                    <input
+                        id="apellido" class="form-control" th:field="*{apellido}"
+                        required autofocus="autofocus">
+                        <label class="control-label" for="apellido">Apellido : </label> 
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-unread"></ion-icon></span>
+                    <input
+                        id="email" type="email" class="form-control" th:field="*{email}"
+                        required autofocus="autofocus">
+                        <label class="control-label" for="email">Email : </label> 
+                </div>
+
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                     <input
+                        type="password" id="password" class="form-control" th:field="*{password}"
+                        required autofocus="autofocus">
+                        <label class="control-label" for="password">Password : </label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success"> Registrar</button>
+                    <span>Si estas registrado <a th:href="@{/login}">inicia sesión aqui</a></span>
+                </div>
+  
+            </form>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" ></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js" ></script>
+    
+
+    
+
+</body>
+</html>
